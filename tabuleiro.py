@@ -15,13 +15,67 @@ class Tabuleiro:
         self.window = tk.Tk()
         self.window.title("Jogo da Velha")
         self.window.geometry("300x350")
+        
         self.window.rowconfigure(0, minsize=100, weight=1)
         self.window.rowconfigure(1, minsize=100, weight=1)
         self.window.rowconfigure(2, minsize=100, weight=1)
         self.window.rowconfigure(3, weight=1)
+        self.window.columnconfigure(0, minsize=100, weight=1)
+        self.window.columnconfigure(1, minsize=100, weight=1)
+        self.window.columnconfigure(2, minsize=100, weight=1)
+        
+        self.conteudo_label = tk.StringVar()                
+        self.conteudo_label.set("Jogador: X")
+        label = tk.Label(self.window)
+        label.configure(textvariable=self.conteudo_label)
+        label.configure(font="Courier 15")
+        label.grid(row=3, column=0, columnspan=3, sticky="nsew")
+        
+        self.botão00 = tk.Button(self.window)
+        self.botão00.grid(row=0, column=0, sticky="nsew")
+        
+        self.botão01 = tk.Button(self.window)
+        self.botão01.grid(row=0, column=1, sticky="nsew")     
+
+        self.botão02 = tk.Button(self.window)
+        self.botão02.grid(row=0, column=2, sticky="nsew")
+
+        self.botão10 = tk.Button(self.window)
+        self.botão10.grid(row=1, column=0, sticky="nsew")
+
+        self.botão11 = tk.Button(self.window)
+        self.botão11.grid(row=1, column=1, sticky="nsew")
+
+        self.botão12 = tk.Button(self.window)
+        self.botão12.grid(row=1, column=2, sticky="nsew")
+
+        self.botão20 = tk.Button(self.window)
+        self.botão20.grid(row=2, column=0, sticky="nsew")
+
+        self.botão21 = tk.Button(self.window)
+        self.botão21.grid(row=2, column=1, sticky="nsew")
+
+        self.botão22 = tk.Button(self.window)
+        self.botão22.grid(row=2, column=2, sticky="nsew")
+        
+        
         
     def iniciar(self):
         self.window.mainloop()
+
+    def arruma_jogador(self):
+        if self.jogo_tabuleiro.jogador == 1:
+            self.conteudo_label.set("Jogador: X")
+        else:
+            self.conteudo_label.set("Jogador: O")
+    
+    def apertou_botao00(self):
+        self.jogo_tabuleiro.recebe_jogada(0,0)
+       
+        if self.jogo_tabuleiro.jogador == 1:
+            self.botão00.configure(text="X")
+        else:
+            self.botão00.configure(text="O")
         
 app = Tabuleiro()
 app.iniciar()
