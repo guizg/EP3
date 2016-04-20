@@ -15,6 +15,10 @@ class Tabuleiro:
         self.window = tk.Tk()
         self.window.title("Jogo da Velha")
         self.window.geometry("300x350")
+        self.window.rowconfigure(0, minsize=100, weight=1)
+        self.window.rowconfigure(1, minsize=100, weight=1)
+        self.window.rowconfigure(2, minsize=100, weight=1)
+        self.window.rowconfigure(3, weight=1)
         
     def iniciar(self):
         self.window.mainloop()
