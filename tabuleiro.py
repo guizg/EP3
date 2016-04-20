@@ -10,9 +10,18 @@ import tkinter as tk
 
 class Tabuleiro:
     
-    def _init_ (self):
+    def __init__ (self):
         self.jogo_tabuleiro = jogo.Jogo()
         self.window = tk.Tk()
         self.window.title("Jogo da Velha")
+        self.window.geometry("300x350")
+        
+    def iniciar(self):
+        self.window.mainloop()
+        
+app = Tabuleiro()
+app.iniciar()
+
+
         
                 

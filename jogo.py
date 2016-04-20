@@ -9,7 +9,7 @@ import numpy as np
 
 class Jogo:
     
-    def _init_(self):
+    def __init__(self):
         self.jogador = 1
         self.rep_tabuleiro = np.zeros([3,3])
 
