@@ -15,6 +15,10 @@ class Jogo:
 
     def recebe_jogada(self,linha,coluna):
         self.rep_tabuleiro[linha][coluna] = self.jogador
+        if self.jogador == 1:
+            self.jogador = 2
+        else:
+            self.jogador = 1
             
     def limpa_jogadas(self):
         self.rep_tabuleiro = np.zeros([3,3])
