@@ -33,6 +33,7 @@ class Tabuleiro:
         
         self.botão00 = tk.Button(self.window)
         self.botão00.grid(row=0, column=0, sticky="nsew")
+        self.botão00.configure(command=self.apertou_botao00)
         
         self.botão01 = tk.Button(self.window)
         self.botão01.grid(row=0, column=1, sticky="nsew")     
@@ -70,14 +71,18 @@ class Tabuleiro:
             self.conteudo_label.set("Jogador: O")
     
     def apertou_botao00(self):
-        self.jogo_tabuleiro.recebe_jogada(0,0)
-       
+        
         if self.jogo_tabuleiro.jogador == 1:
             self.botão00.configure(text="X")
         else:
             self.botão00.configure(text="O")
+
+        self.jogo_tabuleiro.recebe_jogada(0,0)        
+        
+        self.arruma_jogador()
         
 app = Tabuleiro()
+app.arruma_jogador()
 app.iniciar()
 
 
