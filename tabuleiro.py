@@ -11,12 +11,14 @@ import tkinter as tk
 class Tabuleiro: #interface gráfica do jogo
     
     def __init__ (self):
-        self.jogo_tabuleiro = jogo.Jogo() #chamando o objeto Jogo, do arquivo jogo de jogo_tabuleiro
+        self.jogo_tabuleiro = jogo.Jogo() #um atributo  do tipo Jogo, importado do arquivo jogo.py
         self.window = tk.Tk()
         self.window.title("Jogo da Velha")
         self.window.geometry("300x350")
         
-        self.window.rowconfigure(0, minsize=100, weight=1)#dividindo o espaço da janela em 10 botões
+        
+        #dividindo o espaço da janela em 10 botões        
+        self.window.rowconfigure(0, minsize=100, weight=1)
         self.window.rowconfigure(1, minsize=100, weight=1)
         self.window.rowconfigure(2, minsize=100, weight=1)
         self.window.rowconfigure(3, minsize=50, weight=1)
@@ -24,8 +26,9 @@ class Tabuleiro: #interface gráfica do jogo
         self.window.columnconfigure(1, minsize=100, weight=1)
         self.window.columnconfigure(2, minsize=100, weight=1)
         
-                     
-        self.botão00 = tk.Button(self.window) #do botão 00  até 22 serão os 9 botões do jogo
+        #do botão 00  até 22 serão os 9 botões do jogo   
+            
+        self.botão00 = tk.Button(self.window) 
         self.botão00.grid(row=0, column=0, sticky="nsew")
         self.botão00.configure(command=self.apertou_botao00)
                 
@@ -61,14 +64,16 @@ class Tabuleiro: #interface gráfica do jogo
         self.botão22.grid(row=2, column=2, sticky="nsew")
         self.botão22.configure(command=self.apertou_botao22)
                 
-        self.botão30 = tk.Button(self.window) #botão que indica de quem é a vez e também reseta o tabuleiro
+        #botão que indica de quem é a vez e também reseta o tabuleiro
+        
+        self.botão30 = tk.Button(self.window) 
         self.botão30.grid(row=3, column=0, sticky="nsew", columnspan=3)
         self.botão30.configure(text="Jogador: X")
         self.botão30.configure(command=self.apertou_botao30)
 
 
         
-    def iniciar(self):
+    def iniciar(self): #inicia o jogo
         self.window.mainloop()
 
     def arruma_jogador(self): #relaciona o valor número de .jogador com a interface gráfica
@@ -77,7 +82,7 @@ class Tabuleiro: #interface gráfica do jogo
         else:
             self.botão30.configure(text="Jogador: O")
             
-    def apertou_botao30(self): #reseta o tabuleiro
+    def apertou_botao30(self): #reseta o tabuleiro e o jogo
         self.jogo_tabuleiro.limpa_jogadas()
         self.botão00.configure(text="")
         self.botão01.configure(text="")
@@ -102,11 +107,11 @@ class Tabuleiro: #interface gráfica do jogo
             self.arruma_jogador()        
         
             if self.jogo_tabuleiro.verifica_ganhador() == 1: #caso verfica_ganhador seja 1 X ganha
-                self.botão30.configure(text="O Jogador X é vitorioso")
+                self.botão30.configure(text="O Jogador X é vitorioso (clique aqui para re-iniciar)")
             elif self.jogo_tabuleiro.verifica_ganhador() == 2:#caso seja 2 O ganha
-                self.botão30.configure(text="O Jogador O é vitorioso")
+                self.botão30.configure(text="O Jogador O é vitorioso (clique aqui para re-iniciar)")
             elif self.jogo_tabuleiro.verifica_ganhador() == 0: #caso seja 0 da empate
-                self.botão30.configure(text="Deu velha ")
+                self.botão30.configure(text="Deu velha (clique aqui para re-iniciar) ")
         
     def apertou_botao01(self):#o mesmo processo lógico que o botão00 e para os próximos 7 botões
             if self.jogo_tabuleiro.jogador == 1:
@@ -118,12 +123,12 @@ class Tabuleiro: #interface gráfica do jogo
         
             self.arruma_jogador()        
         
-            if self.jogo_tabuleiro.verifica_ganhador() == 1:
-                self.botão30.configure(text="O Jogador X é vitorioso")
-            elif self.jogo_tabuleiro.verifica_ganhador() == 2:
-                self.botão30.configure(text="O Jogador O é vitorioso")
-            elif self.jogo_tabuleiro.verifica_ganhador() == 0:
-                self.botão30.configure(text="Deu velha ")
+            if self.jogo_tabuleiro.verifica_ganhador() == 1: #caso verfica_ganhador seja 1 X ganha
+                self.botão30.configure(text="O Jogador X é vitorioso (clique aqui para re-iniciar)")
+            elif self.jogo_tabuleiro.verifica_ganhador() == 2:#caso seja 2 O ganha
+                self.botão30.configure(text="O Jogador O é vitorioso (clique aqui para re-iniciar)")
+            elif self.jogo_tabuleiro.verifica_ganhador() == 0: #caso seja 0 da empate
+                self.botão30.configure(text="Deu velha (clique aqui para re-iniciar) ")
              
         
     def apertou_botao02(self):
@@ -136,12 +141,12 @@ class Tabuleiro: #interface gráfica do jogo
         
             self.arruma_jogador()        
         
-            if self.jogo_tabuleiro.verifica_ganhador() == 1:
-                self.botão30.configure(text="O Jogador X é vitorioso")
-            elif self.jogo_tabuleiro.verifica_ganhador() == 2:
-                self.botão30.configure(text="O Jogador O é vitorioso")
-            elif self.jogo_tabuleiro.verifica_ganhador() == 0:
-                self.botão30.configure(text="Deu velha ")
+            if self.jogo_tabuleiro.verifica_ganhador() == 1: #caso verfica_ganhador seja 1 X ganha
+                self.botão30.configure(text="O Jogador X é vitorioso (clique aqui para re-iniciar)")
+            elif self.jogo_tabuleiro.verifica_ganhador() == 2:#caso seja 2 O ganha
+                self.botão30.configure(text="O Jogador O é vitorioso (clique aqui para re-iniciar)")
+            elif self.jogo_tabuleiro.verifica_ganhador() == 0: #caso seja 0 da empate
+                self.botão30.configure(text="Deu velha (clique aqui para re-iniciar) ")
              
         
     def apertou_botao10(self):
@@ -154,12 +159,12 @@ class Tabuleiro: #interface gráfica do jogo
         
             self.arruma_jogador()        
         
-            if self.jogo_tabuleiro.verifica_ganhador() == 1:
-                self.botão30.configure(text="O Jogador X é vitorioso")
-            elif self.jogo_tabuleiro.verifica_ganhador() == 2:
-                self.botão30.configure(text="O Jogador O é vitorioso")
-            elif self.jogo_tabuleiro.verifica_ganhador() == 0:
-                self.botão30.configure(text="Deu velha ")
+            if self.jogo_tabuleiro.verifica_ganhador() == 1: #caso verfica_ganhador seja 1 X ganha
+                self.botão30.configure(text="O Jogador X é vitorioso (clique aqui para re-iniciar)")
+            elif self.jogo_tabuleiro.verifica_ganhador() == 2:#caso seja 2 O ganha
+                self.botão30.configure(text="O Jogador O é vitorioso (clique aqui para re-iniciar)")
+            elif self.jogo_tabuleiro.verifica_ganhador() == 0: #caso seja 0 da empate
+                self.botão30.configure(text="Deu velha (clique aqui para re-iniciar) ")
              
         
     def apertou_botao11(self):
@@ -172,12 +177,12 @@ class Tabuleiro: #interface gráfica do jogo
         
             self.arruma_jogador()        
         
-            if self.jogo_tabuleiro.verifica_ganhador() == 1:
-                self.botão30.configure(text="O Jogador X é vitorioso")
-            elif self.jogo_tabuleiro.verifica_ganhador() == 2:
-                self.botão30.configure(text="O Jogador O é vitorioso")
-            elif self.jogo_tabuleiro.verifica_ganhador() == 0:
-                self.botão30.configure(text="Deu velha ")
+            if self.jogo_tabuleiro.verifica_ganhador() == 1: #caso verfica_ganhador seja 1 X ganha
+                self.botão30.configure(text="O Jogador X é vitorioso (clique aqui para re-iniciar)")
+            elif self.jogo_tabuleiro.verifica_ganhador() == 2:#caso seja 2 O ganha
+                self.botão30.configure(text="O Jogador O é vitorioso (clique aqui para re-iniciar)")
+            elif self.jogo_tabuleiro.verifica_ganhador() == 0: #caso seja 0 da empate
+                self.botão30.configure(text="Deu velha (clique aqui para re-iniciar) ")
              
 
     def apertou_botao12(self):
@@ -190,12 +195,12 @@ class Tabuleiro: #interface gráfica do jogo
         
             self.arruma_jogador()        
         
-            if self.jogo_tabuleiro.verifica_ganhador() == 1:
-                self.botão30.configure(text="O Jogador X é vitorioso")
-            elif self.jogo_tabuleiro.verifica_ganhador() == 2:
-                self.botão30.configure(text="O Jogador O é vitorioso")
-            elif self.jogo_tabuleiro.verifica_ganhador() == 0:
-                self.botão30.configure(text="Deu velha ")
+            if self.jogo_tabuleiro.verifica_ganhador() == 1: #caso verfica_ganhador seja 1 X ganha
+                self.botão30.configure(text="O Jogador X é vitorioso (clique aqui para re-iniciar)")
+            elif self.jogo_tabuleiro.verifica_ganhador() == 2:#caso seja 2 O ganha
+                self.botão30.configure(text="O Jogador O é vitorioso (clique aqui para re-iniciar)")
+            elif self.jogo_tabuleiro.verifica_ganhador() == 0: #caso seja 0 da empate
+                self.botão30.configure(text="Deu velha (clique aqui para re-iniciar) ")
 
     def apertou_botao20(self):
             if self.jogo_tabuleiro.jogador == 1:
@@ -207,12 +212,12 @@ class Tabuleiro: #interface gráfica do jogo
         
             self.arruma_jogador()        
         
-            if self.jogo_tabuleiro.verifica_ganhador() == 1:
-                self.botão30.configure(text="O Jogador X é vitorioso")
-            elif self.jogo_tabuleiro.verifica_ganhador() == 2:
-                self.botão30.configure(text="O Jogador O é vitorioso")
-            elif self.jogo_tabuleiro.verifica_ganhador() == 0:
-                self.botão30.configure(text="Deu velha ")
+            if self.jogo_tabuleiro.verifica_ganhador() == 1: #caso verfica_ganhador seja 1 X ganha
+                self.botão30.configure(text="O Jogador X é vitorioso (clique aqui para re-iniciar)")
+            elif self.jogo_tabuleiro.verifica_ganhador() == 2:#caso seja 2 O ganha
+                self.botão30.configure(text="O Jogador O é vitorioso (clique aqui para re-iniciar)")
+            elif self.jogo_tabuleiro.verifica_ganhador() == 0: #caso seja 0 da empate
+                self.botão30.configure(text="Deu velha (clique aqui para re-iniciar) ")
              
 
     def apertou_botao21(self):
@@ -225,12 +230,12 @@ class Tabuleiro: #interface gráfica do jogo
         
             self.arruma_jogador()        
         
-            if self.jogo_tabuleiro.verifica_ganhador() == 1:
-                self.botão30.configure(text="O Jogador X é vitorioso")
-            elif self.jogo_tabuleiro.verifica_ganhador() == 2:
-                self.botão30.configure(text="O Jogador O é vitorioso")
-            elif self.jogo_tabuleiro.verifica_ganhador() == 0:
-                self.botão30.configure(text="Deu velha ")
+            if self.jogo_tabuleiro.verifica_ganhador() == 1: #caso verfica_ganhador seja 1 X ganha
+                self.botão30.configure(text="O Jogador X é vitorioso (clique aqui para re-iniciar)")
+            elif self.jogo_tabuleiro.verifica_ganhador() == 2:#caso seja 2 O ganha
+                self.botão30.configure(text="O Jogador O é vitorioso (clique aqui para re-iniciar)")
+            elif self.jogo_tabuleiro.verifica_ganhador() == 0: #caso seja 0 da empate
+                self.botão30.configure(text="Deu velha (clique aqui para re-iniciar) ")
 
     def apertou_botao22(self):
             if self.jogo_tabuleiro.jogador == 1:
@@ -242,15 +247,15 @@ class Tabuleiro: #interface gráfica do jogo
         
             self.arruma_jogador()        
         
-            if self.jogo_tabuleiro.verifica_ganhador() == 1:
-                self.botão30.configure(text="O Jogador X é vitorioso")
-            elif self.jogo_tabuleiro.verifica_ganhador() == 2:
-                self.botão30.configure(text="O Jogador O é vitorioso")
-            elif self.jogo_tabuleiro.verifica_ganhador() == 0:
-                self.botão30.configure(text="Deu velha ")
+            if self.jogo_tabuleiro.verifica_ganhador() == 1: #caso verfica_ganhador seja 1 X ganha
+                self.botão30.configure(text="O Jogador X é vitorioso (clique aqui para re-iniciar)")
+            elif self.jogo_tabuleiro.verifica_ganhador() == 2:#caso seja 2 O ganha
+                self.botão30.configure(text="O Jogador O é vitorioso (clique aqui para re-iniciar)")
+            elif self.jogo_tabuleiro.verifica_ganhador() == 0: #caso seja 0 da empate
+                self.botão30.configure(text="Deu velha (clique aqui para re-iniciar) ")
              
         
-app = Tabuleiro() #executa tabuleiro
+app = Tabuleiro() 
 app.iniciar()
 
 
