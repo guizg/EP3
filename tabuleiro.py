@@ -25,7 +25,7 @@ class Tabuleiro: #interface gráfica do jogo
         self.window.columnconfigure(2, minsize=100, weight=1)
         
                      
-        self.botão00 = tk.Button(self.window) #do botão 00  até 
+        self.botão00 = tk.Button(self.window) #do botão 00  até 22 serão os 9 botões do jogo
         self.botão00.grid(row=0, column=0, sticky="nsew")
         self.botão00.configure(command=self.apertou_botao00)
                 
@@ -61,7 +61,7 @@ class Tabuleiro: #interface gráfica do jogo
         self.botão22.grid(row=2, column=2, sticky="nsew")
         self.botão22.configure(command=self.apertou_botao22)
                 
-        self.botão30 = tk.Button(self.window)
+        self.botão30 = tk.Button(self.window) #botão que indica de quem é a vez e também reseta o tabuleiro
         self.botão30.grid(row=3, column=0, sticky="nsew", columnspan=3)
         self.botão30.configure(text="Jogador: X")
         self.botão30.configure(command=self.apertou_botao30)
@@ -71,13 +71,13 @@ class Tabuleiro: #interface gráfica do jogo
     def iniciar(self):
         self.window.mainloop()
 
-    def arruma_jogador(self):
+    def arruma_jogador(self): #relaciona o valor número de .jogador com a interface gráfica
         if self.jogo_tabuleiro.jogador == 1:
             self.botão30.configure(text="Jogador: X")
         else:
             self.botão30.configure(text="Jogador: O")
             
-    def apertou_botao30(self):
+    def apertou_botao30(self): #reseta o tabuleiro
         self.jogo_tabuleiro.limpa_jogadas()
         self.botão00.configure(text="")
         self.botão01.configure(text="")
@@ -90,25 +90,25 @@ class Tabuleiro: #interface gráfica do jogo
         self.botão22.configure(text="")        
         self.botão30.configure(text="Jogador: X")
         
-    def apertou_botao00(self):
+    def apertou_botao00(self): #do botão 00 até o 22 realiza as mesmas ações:
                 
-            if self.jogo_tabuleiro.jogador == 1:
+            if self.jogo_tabuleiro.jogador == 1:#marca 1 como X e 2 como O
                 self.botão00.configure(text="X")
             else:
                 self.botão00.configure(text="O")
 
-            self.jogo_tabuleiro.recebe_jogada(0,0)        
+            self.jogo_tabuleiro.recebe_jogada(0,0)#recebe o valor númerico do jogador e adiciona na matriz do objeto Jogo(jogo_tabuleiro) na coordenada [0][0]        
         
             self.arruma_jogador()        
         
-            if self.jogo_tabuleiro.verifica_ganhador() == 1:
+            if self.jogo_tabuleiro.verifica_ganhador() == 1: #caso verfica_ganhador seja 1 X ganha
                 self.botão30.configure(text="O Jogador X é vitorioso")
-            elif self.jogo_tabuleiro.verifica_ganhador() == 2:
+            elif self.jogo_tabuleiro.verifica_ganhador() == 2:#caso seja 2 O ganha
                 self.botão30.configure(text="O Jogador O é vitorioso")
-            elif self.jogo_tabuleiro.verifica_ganhador() == 0:
+            elif self.jogo_tabuleiro.verifica_ganhador() == 0: #caso seja 0 da empate
                 self.botão30.configure(text="Deu velha ")
         
-    def apertou_botao01(self):
+    def apertou_botao01(self):#o mesmo processo lógico que o botão00 e para os próximos 7 botões
             if self.jogo_tabuleiro.jogador == 1:
                 self.botão01.configure(text="X")
             else:
@@ -250,7 +250,7 @@ class Tabuleiro: #interface gráfica do jogo
                 self.botão30.configure(text="Deu velha ")
              
         
-app = Tabuleiro()
+app = Tabuleiro() #executa tabuleiro
 app.iniciar()
 
 
