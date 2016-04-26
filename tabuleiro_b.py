@@ -8,15 +8,15 @@ Created on Mon Apr 25 22:56:44 2016
 import jogo
 import tkinter as tk
 
-class Tabuleiro:
+class Tabuleiro: #interface gráfica do jogo
     
     def __init__ (self):
-        self.jogo_tabuleiro = jogo.Jogo()
+        self.jogo_tabuleiro = jogo.Jogo() #chamando o objeto Jogo, do arquivo jogo de jogo_tabuleiro
         self.window = tk.Tk()
         self.window.title("Jogo da Velha")
         self.window.geometry("300x350")
         
-        self.window.rowconfigure(0, minsize=100, weight=1)
+        self.window.rowconfigure(0, minsize=100, weight=1)#dividindo o espaço da janela em 10 botões
         self.window.rowconfigure(1, minsize=100, weight=1)
         self.window.rowconfigure(2, minsize=100, weight=1)
         self.window.rowconfigure(3, minsize=50, weight=1)
@@ -25,7 +25,7 @@ class Tabuleiro:
         self.window.columnconfigure(2, minsize=100, weight=1)
         
                      
-        self.botão00 = tk.Button(self.window)
+        self.botão00 = tk.Button(self.window) #do botão 00  até 
         self.botão00.grid(row=0, column=0, sticky="nsew")
         self.botão00.configure(command=self.apertou_botao00)
                 
