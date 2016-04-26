@@ -19,10 +19,11 @@ class Tabuleiro:
         self.window.rowconfigure(0, minsize=100, weight=1)
         self.window.rowconfigure(1, minsize=100, weight=1)
         self.window.rowconfigure(2, minsize=100, weight=1)
-        self.window.rowconfigure(3, weight=1)
+        self.window.rowconfigure(3, minsize=50, weight=1)
         self.window.columnconfigure(0, minsize=100, weight=1)
         self.window.columnconfigure(1, minsize=100, weight=1)
         self.window.columnconfigure(2, minsize=100, weight=1)
+        
                      
         self.botão00 = tk.Button(self.window)
         self.botão00.grid(row=0, column=0, sticky="nsew")
@@ -86,6 +87,7 @@ class Tabuleiro:
         self.botão20.configure(text="")
         self.botão21.configure(text="")
         self.botão22.configure(text="")        
+        self.botão30.configure(text="Jogador: X")
         
     def apertou_botao00(self):
                 
