@@ -62,7 +62,8 @@ class Tabuleiro:
         self.botão22.configure(command=self.apertou_botao22)
                 
         self.botão30 = tk.Button(self.window)
-        self.botão30.grid(row=3, column=0, sticky="nsew")
+        self.botão30.grid(row=3, column=0, sticky="nsew", columnspan=3)
+        self.botão30.configure(text="Jogador: X")
         self.botão30.configure(command=self.apertou_botao30)
 
 
