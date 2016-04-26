@@ -177,7 +177,7 @@ class Tabuleiro:
              
 
     def apertou_botao12(self):
-       if self.conteudo_label != "O Jogador X é vitorioso" or "O Jogador O é vitorioso" or "Deu velha":
+        if self.conteudo_label != "O Jogador X é vitorioso" or "O Jogador O é vitorioso" or "Deu velha":
             if self.jogo_tabuleiro.jogador == 1:
                 self.botão12.configure(text="X")
             else:
@@ -193,13 +193,10 @@ class Tabuleiro:
                 self.conteudo_label.set("O Jogador O é vitorioso")
             elif self.jogo_tabuleiro.verifica_ganhador() == 0:
                 self.conteudo_label.set("Deu velha")
-        else: self.jogo_tabuleiro.limpa_jogadas()
-             
+        else: self.jogo_tabuleiro.limpa_jogadas()             
 
     def apertou_botao20(self):
-        if self.conteudo_label == "O Jogador X é vitorioso" or "O Jogador O é vitorioso" or "Deu velha":
-            self.jogo_tabuleiro.limpa_jogadas()
-        else:
+        if self.conteudo_label != "O Jogador X é vitorioso" or "O Jogador O é vitorioso" or "Deu velha":
             if self.jogo_tabuleiro.jogador == 1:
                 self.botão20.configure(text="X")
             else:
@@ -215,12 +212,11 @@ class Tabuleiro:
                 self.conteudo_label.set("O Jogador O é vitorioso")
             elif self.jogo_tabuleiro.verifica_ganhador() == 0:
                 self.conteudo_label.set("Deu velha")
+        else: self.jogo_tabuleiro.limpa_jogadas()
              
 
     def apertou_botao21(self):
-        if self.conteudo_label == "O Jogador X é vitorioso" or "O Jogador O é vitorioso" or "Deu velha":
-            self.jogo_tabuleiro.limpa_jogadas()
-        else:
+        if self.conteudo_label != "O Jogador X é vitorioso" or "O Jogador O é vitorioso" or "Deu velha":
             if self.jogo_tabuleiro.jogador == 1:
                 self.botão21.configure(text="X")
             else:
@@ -236,12 +232,11 @@ class Tabuleiro:
                 self.conteudo_label.set("O Jogador O é vitorioso")
             elif self.jogo_tabuleiro.verifica_ganhador() == 0:
                 self.conteudo_label.set("Deu velha")
+        else: self.jogo_tabuleiro.limpa_jogadas()
              
 
     def apertou_botao22(self):
-        if self.conteudo_label == "O Jogador X é vitorioso" or "O Jogador O é vitorioso" or "Deu velha":
-            self.jogo_tabuleiro.limpa_jogadas()
-        else:
+        if self.conteudo_label != "O Jogador X é vitorioso" or "O Jogador O é vitorioso" or "Deu velha":
             if self.jogo_tabuleiro.jogador == 1:
                 self.botão22.configure(text="X")
             else:
@@ -257,6 +252,7 @@ class Tabuleiro:
                 self.conteudo_label.set("O Jogador O é vitorioso")
             elif self.jogo_tabuleiro.verifica_ganhador() == 0:
                 self.conteudo_label.set("Deu velha")
+        else: self.jogo_tabuleiro.limpa_jogadas()
              
         
 app = Tabuleiro()
