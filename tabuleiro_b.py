@@ -77,9 +77,16 @@ class Tabuleiro:
             
     def apertou_botao30(self):
         self.jogo_tabuleiro.limpa_jogadas()
-        for i in range (3):
-            self.botão[i][i].configure(text="")
-    
+        self.botão00.configure(text="")
+        self.botão01.configure(text="")
+        self.botão02.configure(text="")
+        self.botão10.configure(text="")
+        self.botão11.configure(text="")        
+        self.botão12.configure(text="")
+        self.botão20.configure(text="")
+        self.botão21.configure(text="")
+        self.botão22.configure(text="")        
+        
     def apertou_botao00(self):
                 
             if self.jogo_tabuleiro.jogador == 1:
