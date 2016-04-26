@@ -102,11 +102,11 @@ class Tabuleiro:
             self.arruma_jogador()        
         
             if self.jogo_tabuleiro.verifica_ganhador() == 1:
-                self.botão30.configure(text="O Jogador X é vitorioso")
+                self.botão30.configure(text="O Jogador X é vitorioso (aperte aqui para resetar)")
             elif self.jogo_tabuleiro.verifica_ganhador() == 2:
-                self.botão30.configure(text="O Jogador O é vitorioso")
+                self.botão30.configure(text="O Jogador O é vitorioso (aperte aqui para resetar)")
             elif self.jogo_tabuleiro.verifica_ganhador() == 0:
-                self.botão30.configure(text="Deu velha ")
+                self.botão30.configure(text="Deu velha (aperte aqui para resetar)")
         
     def apertou_botao01(self):
             if self.jogo_tabuleiro.jogador == 1:
@@ -119,11 +119,11 @@ class Tabuleiro:
             self.arruma_jogador()        
         
             if self.jogo_tabuleiro.verifica_ganhador() == 1:
-                self.botão30.configure(text="O Jogador X é vitorioso")
+                self.botão30.configure(text="O Jogador X é vitorioso (aperte aqui para resetar)")
             elif self.jogo_tabuleiro.verifica_ganhador() == 2:
-                self.botão30.configure(text="O Jogador O é vitorioso")
+                self.botão30.configure(text="O Jogador O é vitorioso (aperte aqui para resetar)")
             elif self.jogo_tabuleiro.verifica_ganhador() == 0:
-                self.botão30.configure(text="Deu velha ")
+                self.botão30.configure(text="Deu velha (aperte aqui para resetar)")
              
         
     def apertou_botao02(self):
@@ -137,11 +137,11 @@ class Tabuleiro:
             self.arruma_jogador()        
         
             if self.jogo_tabuleiro.verifica_ganhador() == 1:
-                self.botão30.configure(text="O Jogador X é vitorioso")
+                self.botão30.configure(text="O Jogador X é vitorioso (aperte aqui para resetar)")
             elif self.jogo_tabuleiro.verifica_ganhador() == 2:
-                self.botão30.configure(text="O Jogador O é vitorioso")
+                self.botão30.configure(text="O Jogador O é vitorioso (aperte aqui para resetar)")
             elif self.jogo_tabuleiro.verifica_ganhador() == 0:
-                self.botão30.configure(text="Deu velha ")
+                self.botão30.configure(text="Deu velha (aperte aqui para resetar)")
              
         
     def apertou_botao10(self):
@@ -155,11 +155,11 @@ class Tabuleiro:
             self.arruma_jogador()        
         
             if self.jogo_tabuleiro.verifica_ganhador() == 1:
-                self.botão30.configure(text="O Jogador X é vitorioso")
+                self.botão30.configure(text="O Jogador X é vitorioso (aperte aqui para resetar)")
             elif self.jogo_tabuleiro.verifica_ganhador() == 2:
-                self.botão30.configure(text="O Jogador O é vitorioso")
+                self.botão30.configure(text="O Jogador O é vitorioso (aperte aqui para resetar)")
             elif self.jogo_tabuleiro.verifica_ganhador() == 0:
-                self.botão30.configure(text="Deu velha ")
+                self.botão30.configure(text="Deu velha (aperte aqui para resetar)")
              
         
     def apertou_botao11(self):
@@ -173,11 +173,11 @@ class Tabuleiro:
             self.arruma_jogador()        
         
             if self.jogo_tabuleiro.verifica_ganhador() == 1:
-                self.botão30.configure(text="O Jogador X é vitorioso")
+                self.botão30.configure(text="O Jogador X é vitorioso (aperte aqui para resetar)")
             elif self.jogo_tabuleiro.verifica_ganhador() == 2:
-                self.botão30.configure(text="O Jogador O é vitorioso")
+                self.botão30.configure(text="O Jogador O é vitorioso (aperte aqui para resetar)")
             elif self.jogo_tabuleiro.verifica_ganhador() == 0:
-                self.botão30.configure(text="Deu velha ")
+                self.botão30.configure(text="Deu velha (aperte aqui para resetar)")
              
 
     def apertou_botao12(self):
@@ -191,11 +191,11 @@ class Tabuleiro:
             self.arruma_jogador()        
         
             if self.jogo_tabuleiro.verifica_ganhador() == 1:
-                self.botão30.configure(text="O Jogador X é vitorioso")
+                self.botão30.configure(text="O Jogador X é vitorioso (aperte aqui para resetar)")
             elif self.jogo_tabuleiro.verifica_ganhador() == 2:
-                self.botão30.configure(text="O Jogador O é vitorioso")
+                self.botão30.configure(text="O Jogador O é vitorioso (aperte aqui para resetar)")
             elif self.jogo_tabuleiro.verifica_ganhador() == 0:
-                self.botão30.configure(text="Deu velha ")
+                self.botão30.configure(text="Deu velha (aperte aqui para resetar)")
 
     def apertou_botao20(self):
             if self.jogo_tabuleiro.jogador == 1:
@@ -208,11 +208,11 @@ class Tabuleiro:
             self.arruma_jogador()        
         
             if self.jogo_tabuleiro.verifica_ganhador() == 1:
-                self.botão30.configure(text="O Jogador X é vitorioso")
+                self.botão30.configure(text="O Jogador X é vitorioso (aperte aqui para resetar)")
             elif self.jogo_tabuleiro.verifica_ganhador() == 2:
-                self.botão30.configure(text="O Jogador O é vitorioso")
+                self.botão30.configure(text="O Jogador O é vitorioso (aperte aqui para resetar)")
             elif self.jogo_tabuleiro.verifica_ganhador() == 0:
-                self.botão30.configure(text="Deu velha ")
+                self.botão30.configure(text="Deu velha (aperte aqui para resetar)")
              
 
     def apertou_botao21(self):
@@ -226,11 +226,11 @@ class Tabuleiro:
             self.arruma_jogador()        
         
             if self.jogo_tabuleiro.verifica_ganhador() == 1:
-                self.botão30.configure(text="O Jogador X é vitorioso")
+                self.botão30.configure(text="O Jogador X é vitorioso (aperte aqui para resetar)")
             elif self.jogo_tabuleiro.verifica_ganhador() == 2:
-                self.botão30.configure(text="O Jogador O é vitorioso")
+                self.botão30.configure(text="O Jogador O é vitorioso (aperte aqui para resetar)")
             elif self.jogo_tabuleiro.verifica_ganhador() == 0:
-                self.botão30.configure(text="Deu velha ")
+                self.botão30.configure(text="Deu velha (aperte aqui para resetar)")
 
     def apertou_botao22(self):
             if self.jogo_tabuleiro.jogador == 1:
@@ -243,11 +243,11 @@ class Tabuleiro:
             self.arruma_jogador()        
         
             if self.jogo_tabuleiro.verifica_ganhador() == 1:
-                self.botão30.configure(text="O Jogador X é vitorioso")
+                self.botão30.configure(text="O Jogador X é vitorioso (aperte aqui para resetar)")
             elif self.jogo_tabuleiro.verifica_ganhador() == 2:
-                self.botão30.configure(text="O Jogador O é vitorioso")
+                self.botão30.configure(text="O Jogador O é vitorioso (aperte aqui para resetar)")
             elif self.jogo_tabuleiro.verifica_ganhador() == 0:
-                self.botão30.configure(text="Deu velha ")
+                self.botão30.configure(text="Deu velha (aperte aqui para resetar)")
              
         
 app = Tabuleiro()
